@@ -1,5 +1,10 @@
-# ---------------------------------------------------------------#
+# Query untuk Dump Data ke `sync_master`
 
+Berikut adalah serangkaian query untuk mendump data dari berbagai tabel ke dalam tabel `sync_master`. Query-query ini memastikan bahwa data yang belum ada di `sync_master` akan dimasukkan dengan kondisi tertentu, seperti rentang tanggal yang ditentukan.
+
+## 1. Dump Data dari Tabel `osls`
+
+```sql
 SELECT "0002793" AS store_code,
        o.DocEntry AS key_value,
        "osls" AS table_name,
@@ -15,9 +20,9 @@ WHERE NOT EXISTS (
 )
 AND o.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
 ORDER BY key_value ASC;
-
+```
 # ---------------------------------------------------------------#
-
+```sql
 SELECT "0002793" AS store_code,
        o.DocEntry AS key_value,
        "sls1" AS table_name,
@@ -38,9 +43,9 @@ AND o.DocEntry IN (
 )
 GROUP BY o.DocEntry
 ORDER BY key_value ASC;
-
+```
 # ---------------------------------------------------------------#
-
+```sql
 SELECT "0002793" AS store_code,
 		 o.DocNum AS key_value,
 		 "opay" AS table_name,
@@ -55,9 +60,9 @@ WHERE NOT EXISTS
 AND o.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
 GROUP BY o.DocNum
 ORDER BY key_value ASC;
-
+```
 # ---------------------------------------------------------------#
-
+```sql
 SELECT "0002793" AS store_code,
        o.DocNum AS key_value,
        "pay1" AS table_name,
@@ -78,9 +83,9 @@ AND o.DocNum IN (
 )
 GROUP BY o.DocNum
 ORDER BY key_value ASC;
-
+```
 # ---------------------------------------------------------------#
-
+```sql
 SELECT "0002793" AS store_code,
        o.DocNum AS key_value,
        "pay2" AS table_name,
@@ -101,9 +106,9 @@ AND o.DocNum IN (
 )
 GROUP BY o.DocNum
 ORDER BY key_value ASC;
-
+```
 # ---------------------------------------------------------------#
-
+```sql
 SELECT "0002793" AS store_code,
        o.DocNum AS key_value,
        "pay3" AS table_name,
@@ -124,9 +129,9 @@ AND o.DocNum IN (
 )
 GROUP BY o.DocNum
 ORDER BY key_value ASC;
-
+```
 # ---------------------------------------------------------------#
-
+```sql
 SELECT "0002793" AS store_code,
        o.DocNum AS key_value,
        "pay4" AS table_name,
@@ -148,9 +153,9 @@ AND o.DocNum IN (
 )
 GROUP BY o.DocNum
 ORDER BY key_value ASC;
-
+```
 # ---------------------------------------------------------------#
-
+```sql
 SELECT "0002793" AS store_code,
        o.DocNum AS key_value,
        "pay5" AS table_name,
@@ -172,9 +177,9 @@ AND o.DocNum IN (
 )
 GROUP BY o.DocNum
 ORDER BY key_value ASC;
-
+```
 # ---------------------------------------------------------------#
-
+```sql
 SELECT "0002793" AS store_code, 
  		 o.DocEntry AS key_value,
 		 "opoi" AS table_name,
@@ -188,5 +193,5 @@ WHERE NOT EXISTS
 	 AND s.table_name = 'opoi')
 AND o.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
 ORDER BY key_value ASC;
-
+```
 # ---------------------------------------------------------------#
