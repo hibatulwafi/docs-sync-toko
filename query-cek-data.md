@@ -1,17 +1,7 @@
 # Query Pengecekan Data
 
 ## 1. Pengecekan Data synchronize
-```sql
-SELECT * FROM osls o WHERE o.DocEntry = '9178' AND o.DocNum = '2401000003' AND o.StoreCode = '0000005';
-SELECT * FROM opay o WHERE o.DocNum = '2401000003' AND o.StoreCode = '0000005';
-SELECT * FROM pay2 p WHERE p.DocNum = '2401000003' AND p.StoreCode = '0000005';
-SELECT * FROM pay3 p WHERE p.DocNum = '2401000003' AND p.StoreCode = '0000005';
-SELECT * FROM pay4 p WHERE p.DocNum = '2401000003' AND p.StoreCode = '0000005';
-SELECT * FROM pay5 p WHERE p.DocNum = '2401000003' AND p.StoreCode = '0000005';
-SELECT * FROM opoi o WHERE o.BaseEntry = '9178' AND o.StoreCode = '0000005';
-```
 
-## 2. Pengecekan Data synchronize (spesifik)
 ```sql
 SELECT 
     -- Group: Doc Entries
@@ -64,6 +54,19 @@ LEFT JOIN
 JOIN 
     opoi oi ON oi.BaseEntry = o.DocEntry AND oi.StoreCode = o.StoreCode;
 ```
+
+## 2. Pengecekan Data synchronize (spesifik)
+
+```sql
+SELECT * FROM osls o WHERE o.DocEntry = '9178' AND o.DocNum = '2401000003' AND o.StoreCode = '0000005';
+SELECT * FROM opay o WHERE o.DocNum = '2401000003' AND o.StoreCode = '0000005';
+SELECT * FROM pay2 p WHERE p.DocNum = '2401000003' AND p.StoreCode = '0000005';
+SELECT * FROM pay3 p WHERE p.DocNum = '2401000003' AND p.StoreCode = '0000005';
+SELECT * FROM pay4 p WHERE p.DocNum = '2401000003' AND p.StoreCode = '0000005';
+SELECT * FROM pay5 p WHERE p.DocNum = '2401000003' AND p.StoreCode = '0000005';
+SELECT * FROM opoi o WHERE o.BaseEntry = '9178' AND o.StoreCode = '0000005';
+```
+
 
 ## Bisa juga tambahkan where untuk spesifik entry
 
