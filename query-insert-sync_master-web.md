@@ -29,5 +29,5 @@ Query ini digunakan untuk mengekspor data dari tabel `sync_master` database toko
    FROM sync_master;
    ```
 2. **Run query di database toko**
-3. **Pada Heidi, Copy as > SQL Inserts**
-4. **Paste query, dan run pada database unionweb**
+3. **Pada Heidi, `Copy as > SQL Inserts`**
+4. **Paste query, dan run pada database `unionweb`**
