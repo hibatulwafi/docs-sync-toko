@@ -24,11 +24,14 @@
     - [Query Insert sync_master](query-insert-sync_union-web.md)
     - Insert data dari `database toko` kedalam masing masing table `osls` , `sls1` .... `opoi`.
     - [Query Step 2](step2.md)
-    - 
+      
 
 3. **Update `sync_master` dengan Primary Key dari `unionretaildb`**
     - Ambil **primary_key_value_union** dari database `unionretaildb` untuk diperbarui di tabel `sync_master` pada database `unionweb`.
-    - [Query Step 2](step3.md)
+    - [Query Step 3](step3.md)
+      
+4. **Cek data**
+    - [Query Cek Data](query-cek-data.md)
 ---
 
 ## Catatan
