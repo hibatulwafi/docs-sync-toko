@@ -1,6 +1,6 @@
 ### **1. Tabel OSLS**
 
-``sql
+```sql
 SELECT DocEntry,
 "0002793" as StoreCode,
 DocNum,
@@ -19,11 +19,11 @@ VoucherCode, DiscSum
 FROM osls o
 LEFT JOIN ocrd c ON o.CardCode = c.OutletCardCode
 WHERE o.DocDate BETWEEN '2024-01-01' AND '2024-11-30';
-``
+```
 
 ### **2. Tabel SLS1**
 
-``sql
+```sql
 SELECT "0002793" as StoreCode, DocEntry,
 LineId, ItemCode, SerialNum, BatchNo,
 ExpDate, Price, Quantity, DiscPrcnt,
@@ -37,11 +37,11 @@ WHERE sls1.DocEntry IN (
     FROM osls os
     WHERE os.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
 );
-``
+```
 
 ### **3. Tabel OPAY**
 
-``sql
+```sql
 SELECT "0002793" as StoreCode,
 DocEntry,
 DocNum,
@@ -55,11 +55,11 @@ Rounding,
 "Y" as Sync2SAP
 FROM opay
 WHERE opay.DocDate BETWEEN '2024-01-01' AND '2024-11-30';
-``
+```
 
 ### **4. Tabel PAY1**
 
-``sql
+```sql
 SELECT "0002793" AS StoreCode,
        p.DocNum,
        p.LineId,
@@ -73,11 +73,11 @@ WHERE DocNum IN (
     FROM opay op
     WHERE op.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
 );
-``
+```
 
 ### **5. Tabel PAY2**
 
-``sql
+```sql
 SELECT "0002793" as StoreCode,
 DocNum,
 LineId,
@@ -102,11 +102,11 @@ WHERE DocNum IN (
     FROM opay op
     WHERE op.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
 );
-``
+```
 
 ### **6. Tabel PAY3**
 
-``sql
+```sql
 SELECT
 "0002793" as StoreCode,
 DocNum,
@@ -123,7 +123,7 @@ WHERE DocNum IN (
 
 ### **7. Tabel PAY4**
 
-``sql
+```sql
 SELECT
 "0002793" as StoreCode,
 DocNum,
@@ -159,7 +159,7 @@ WHERE DocNum IN (
 
 ### **9. Tabel OPOI**
 
-``sql
+```sql
 SELECT "0002793" AS StoreCode,
 DocEntry,
 DocDate,
@@ -179,4 +179,4 @@ U_FactorPoin,
 U_CardNumber
 FROM opoi
 WHERE opoi.DocDate  BETWEEN '2024-01-01' AND '2024-11-30';
-
+```
