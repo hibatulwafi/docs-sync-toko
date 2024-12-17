@@ -5,7 +5,7 @@ Berikut adalah serangkaian query untuk mendump data dari berbagai tabel ke dalam
 ## 1. Dump Data dari Tabel `osls`
 
 ```sql
-SELECT "0002793" AS store_code,
+SELECT "[store_code]" AS store_code,
        o.DocEntry AS key_value,
        "osls" AS table_name,
        "docentry" AS key_name,
@@ -18,12 +18,14 @@ WHERE NOT EXISTS (
     WHERE s.key_value = o.DocEntry
       AND s.table_name = 'osls'
 )
-AND o.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
+AND o.DocDate BETWEEN '[start_date]' AND '[end_date]'
 ORDER BY key_value ASC;
 ```
-# ---------------------------------------------------------------#
+
+## 2. Dump Data dari Tabel `sls1`
+
 ```sql
-SELECT "0002793" AS store_code,
+SELECT "[store_code]" AS store_code,
        o.DocEntry AS key_value,
        "sls1" AS table_name,
        "docentry" AS key_name,
@@ -39,14 +41,16 @@ WHERE NOT EXISTS (
 AND o.DocEntry IN (
     SELECT os.DocEntry
     FROM osls os
-    WHERE os.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
+    WHERE os.DocDate BETWEEN '[start_date]' AND '[end_date]'
 )
 GROUP BY o.DocEntry
 ORDER BY key_value ASC;
 ```
-# ---------------------------------------------------------------#
+
+## 3. Dump Data dari Tabel `opay`
+
 ```sql
-SELECT "0002793" AS store_code,
+SELECT "[store_code]" AS store_code,
 		 o.DocNum AS key_value,
 		 "opay" AS table_name,
 		 "docnum" AS key_name,
@@ -57,13 +61,15 @@ WHERE NOT EXISTS
 (SELECT 1 FROM sync_master s
 	WHERE s.key_value = o.DocNum
 	AND s.table_name = 'opay')
-AND o.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
+AND o.DocDate BETWEEN '[start_date]' AND '[end_date]'
 GROUP BY o.DocNum
 ORDER BY key_value ASC;
 ```
-# ---------------------------------------------------------------#
+
+## 4. Dump Data dari Tabel `pay1`
+
 ```sql
-SELECT "0002793" AS store_code,
+SELECT "[store_code]" AS store_code,
        o.DocNum AS key_value,
        "pay1" AS table_name,
        "docnum" AS key_name,
@@ -79,14 +85,16 @@ WHERE NOT EXISTS (
 AND o.DocNum IN (
     SELECT op.DocNum
     FROM opay op
-    WHERE op.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
+    WHERE op.DocDate BETWEEN '[start_date]' AND '[end_date]'
 )
 GROUP BY o.DocNum
 ORDER BY key_value ASC;
 ```
-# ---------------------------------------------------------------#
+
+## 5. Dump Data dari Tabel `pay2`
+
 ```sql
-SELECT "0002793" AS store_code,
+SELECT "[store_code]" AS store_code,
        o.DocNum AS key_value,
        "pay2" AS table_name,
        "docnum" AS key_name,
@@ -102,14 +110,16 @@ WHERE NOT EXISTS (
 AND o.DocNum IN (
     SELECT op.DocNum
     FROM opay op
-    WHERE op.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
+    WHERE op.DocDate BETWEEN '[start_date]' AND '[end_date]'
 )
 GROUP BY o.DocNum
 ORDER BY key_value ASC;
 ```
-# ---------------------------------------------------------------#
+
+## 6. Dump Data dari Tabel `pay3`
+
 ```sql
-SELECT "0002793" AS store_code,
+SELECT "[store_code]" AS store_code,
        o.DocNum AS key_value,
        "pay3" AS table_name,
        "docnum" AS key_name,
@@ -125,14 +135,16 @@ WHERE NOT EXISTS (
 AND o.DocNum IN (
     SELECT op.DocNum
     FROM opay op
-    WHERE op.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
+    WHERE op.DocDate BETWEEN '[start_date]' AND '[end_date]'
 )
 GROUP BY o.DocNum
 ORDER BY key_value ASC;
 ```
-# ---------------------------------------------------------------#
+
+## 7. Dump Data dari Tabel `pay4`
+
 ```sql
-SELECT "0002793" AS store_code,
+SELECT "[store_code]" AS store_code,
        o.DocNum AS key_value,
        "pay4" AS table_name,
        "docnum" AS key_name,
@@ -149,14 +161,16 @@ WHERE NOT EXISTS (
 AND o.DocNum IN (
     SELECT op.DocNum
     FROM opay op
-    WHERE op.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
+    WHERE op.DocDate BETWEEN '[start_date]' AND '[end_date]'
 )
 GROUP BY o.DocNum
 ORDER BY key_value ASC;
 ```
-# ---------------------------------------------------------------#
+
+## 8. Dump Data dari Tabel `pay5`
+
 ```sql
-SELECT "0002793" AS store_code,
+SELECT "[store_code]" AS store_code,
        o.DocNum AS key_value,
        "pay5" AS table_name,
        "docnum" AS key_name,
@@ -173,14 +187,16 @@ WHERE NOT EXISTS (
 AND o.DocNum IN (
     SELECT op.DocNum
     FROM opay op
-    WHERE op.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
+    WHERE op.DocDate BETWEEN '[start_date]' AND '[end_date]'
 )
 GROUP BY o.DocNum
 ORDER BY key_value ASC;
 ```
-# ---------------------------------------------------------------#
+
+## 9. Dump Data dari Tabel `opoi`
+
 ```sql
-SELECT "0002793" AS store_code, 
+SELECT "[store_code]" AS store_code, 
  		 o.DocEntry AS key_value,
 		 "opoi" AS table_name,
 		 "docentry" AS key_name,
@@ -191,7 +207,7 @@ WHERE NOT EXISTS
 	 (SELECT 1 FROM sync_master s
 	 WHERE s.key_value = o.DocEntry
 	 AND s.table_name = 'opoi')
-AND o.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
+AND o.DocDate BETWEEN '[start_date]' AND '[end_date]'
 ORDER BY key_value ASC;
 ```
-# ---------------------------------------------------------------#
+
