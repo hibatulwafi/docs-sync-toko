@@ -2,7 +2,7 @@
 
 ```sql
 SELECT DocEntry,
-"0002793" as StoreCode,
+"[store_code]" as StoreCode,
 DocNum,
 DocDate,
 c.CardCode as CardCode,
@@ -18,13 +18,13 @@ DocStatus,
 VoucherCode, DiscSum
 FROM osls o
 LEFT JOIN ocrd c ON o.CardCode = c.OutletCardCode
-WHERE o.DocDate BETWEEN '2024-01-01' AND '2024-11-30';
+WHERE o.DocDate BETWEEN '[start_date]' AND '[end_date]';
 ```
 
 ### **2. Tabel SLS1**
 
 ```sql
-SELECT "0002793" as StoreCode, DocEntry,
+SELECT "[store_code]" as StoreCode, DocEntry,
 LineId, ItemCode, SerialNum, BatchNo,
 ExpDate, Price, Quantity, DiscPrcnt,
 AddDisc1, AddDisc2, VatSum, SalesSum,
@@ -35,14 +35,14 @@ FROM sls1
 WHERE sls1.DocEntry IN (
     SELECT os.DocEntry
     FROM osls os
-    WHERE os.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
+    WHERE os.DocDate BETWEEN '[start_date]' AND '[end_date]'
 );
 ```
 
 ### **3. Tabel OPAY**
 
 ```sql
-SELECT "0002793" as StoreCode,
+SELECT "[store_code]" as StoreCode,
 DocEntry,
 DocNum,
 DocDate,
@@ -54,13 +54,13 @@ TransferSum,
 Rounding,
 "Y" as Sync2SAP
 FROM opay
-WHERE opay.DocDate BETWEEN '2024-01-01' AND '2024-11-30';
+WHERE opay.DocDate BETWEEN '[start_date]' AND '[end_date]';
 ```
 
 ### **4. Tabel PAY1**
 
 ```sql
-SELECT "0002793" AS StoreCode,
+SELECT "[store_code]" AS StoreCode,
        p.DocNum,
        p.LineId,
        p.CashSum,
@@ -71,14 +71,14 @@ FROM pay1 p
 WHERE DocNum IN (
     SELECT op.DocNum
     FROM opay op
-    WHERE op.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
+    WHERE op.DocDate BETWEEN '[start_date]' AND '[end_date]'
 );
 ```
 
 ### **5. Tabel PAY2**
 
 ```sql
-SELECT "0002793" as StoreCode,
+SELECT "[store_code]" as StoreCode,
 DocNum,
 LineId,
 CreditNo,
@@ -100,7 +100,7 @@ FROM pay2
 WHERE DocNum IN (
     SELECT op.DocNum
     FROM opay op
-    WHERE op.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
+    WHERE op.DocDate BETWEEN '[start_date]' AND '[end_date]'
 );
 ```
 
@@ -108,7 +108,7 @@ WHERE DocNum IN (
 
 ```sql
 SELECT
-"0002793" as StoreCode,
+"[store_code]" as StoreCode,
 DocNum,
 LineId,
 VoucherId,
@@ -117,7 +117,7 @@ FROM pay3
 WHERE DocNum IN (
     SELECT op.DocNum
     FROM opay op
-    WHERE op.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
+    WHERE op.DocDate BETWEEN '[start_date]' AND '[end_date]'
 );
 ```
 
@@ -125,7 +125,7 @@ WHERE DocNum IN (
 
 ```sql
 SELECT
-"0002793" as StoreCode,
+"[store_code]" as StoreCode,
 DocNum,
 LineId,
 BalType,
@@ -134,7 +134,7 @@ FROM pay4
 WHERE DocNum IN (
     SELECT op.DocNum
     FROM opay op
-    WHERE op.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
+    WHERE op.DocDate BETWEEN '[start_date]' AND '[end_date]'
 );
 ```
 
@@ -142,7 +142,7 @@ WHERE DocNum IN (
 
 ```sql
 SELECT
-"0002793" as StoreCode,
+"[store_code]" as StoreCode,
 DocNum,
 LineId,
 CreditCard,
@@ -153,14 +153,14 @@ FROM pay5
 WHERE DocNum IN (
     SELECT op.DocNum
     FROM opay op
-    WHERE op.DocDate BETWEEN '2024-01-01' AND '2024-11-30'
+    WHERE op.DocDate BETWEEN '[start_date]' AND '[end_date]'
 );
 ```
 
 ### **9. Tabel OPOI**
 
 ```sql
-SELECT "0002793" AS StoreCode,
+SELECT "[store_code]" AS StoreCode,
 DocEntry,
 DocDate,
 BaseEntry,
@@ -178,5 +178,5 @@ U_CardName,
 U_FactorPoin,
 U_CardNumber
 FROM opoi
-WHERE opoi.DocDate  BETWEEN '2024-01-01' AND '2024-11-30';
+WHERE opoi.DocDate  BETWEEN '[start_date]' AND '[end_date]';
 ```
