@@ -1,4 +1,12 @@
-### **1. Tabel OSLS**
+# Query untuk Dump Data ke `sync_master`
+
+Berikut adalah serangkaian query untuk mendump data untuk di input ke cloud table masing-masing (database toko)
+`database_toko.osls` => `unionweb.osls`
+...
+`database_toko.opoi` => `unionweb.opoi`
+
+### Jalankan query pada database toko
+## **1. Tabel OSLS**
 
 ```sql
 SELECT DocEntry,
@@ -21,7 +29,7 @@ LEFT JOIN ocrd c ON o.CardCode = c.OutletCardCode
 WHERE o.DocDate BETWEEN '[start_date]' AND '[end_date]';
 ```
 
-### **2. Tabel SLS1**
+## **2. Tabel SLS1**
 
 ```sql
 SELECT "[store_code]" as StoreCode, DocEntry,
@@ -39,7 +47,7 @@ WHERE sls1.DocEntry IN (
 );
 ```
 
-### **3. Tabel OPAY**
+## **3. Tabel OPAY**
 
 ```sql
 SELECT "[store_code]" as StoreCode,
@@ -57,7 +65,7 @@ FROM opay
 WHERE opay.DocDate BETWEEN '[start_date]' AND '[end_date]';
 ```
 
-### **4. Tabel PAY1**
+## **4. Tabel PAY1**
 
 ```sql
 SELECT "[store_code]" AS StoreCode,
@@ -75,7 +83,7 @@ WHERE DocNum IN (
 );
 ```
 
-### **5. Tabel PAY2**
+## **5. Tabel PAY2**
 
 ```sql
 SELECT "[store_code]" as StoreCode,
@@ -104,7 +112,7 @@ WHERE DocNum IN (
 );
 ```
 
-### **6. Tabel PAY3**
+## **6. Tabel PAY3**
 
 ```sql
 SELECT
@@ -121,7 +129,7 @@ WHERE DocNum IN (
 );
 ```
 
-### **7. Tabel PAY4**
+## **7. Tabel PAY4**
 
 ```sql
 SELECT
@@ -138,7 +146,7 @@ WHERE DocNum IN (
 );
 ```
 
-### **8. Tabel PAY5**
+## **8. Tabel PAY5**
 
 ```sql
 SELECT
@@ -157,7 +165,7 @@ WHERE DocNum IN (
 );
 ```
 
-### **9. Tabel OPOI**
+## **9. Tabel OPOI**
 
 ```sql
 SELECT "[store_code]" AS StoreCode,
