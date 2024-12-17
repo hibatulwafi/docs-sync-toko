@@ -1,6 +1,6 @@
 # Query Create Table `sync_master`
 
-Dokumen ini berisi query SQL untuk membuat tabel `sync_master` yang digunakan untuk menyimpan data terkait sinkronisasi antar sistem. Tabel ini berisi informasi penting mengenai status sinkronisasi, waktu sinkronisasi, dan informasi lainnya terkait dengan proses sinkronisasi data.
+Dokumen ini berisi query SQL untuk membuat tabel `sync_master` pada database `toko`
 
 ## Query SQL untuk Membuat Tabel `sync_master`
 
