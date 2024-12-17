@@ -2,7 +2,7 @@
 
 Berikut adalah serangkaian query untuk mendump data untuk di input ke cloud table masing-masing (database toko)
 `database_toko.osls` => `unionweb.osls`
-...
+
 
 ### Note : Jalankan query pada database toko
 ## **1. Tabel OSLS**
