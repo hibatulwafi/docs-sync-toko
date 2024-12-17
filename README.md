@@ -16,7 +16,7 @@
 
 1. **Create Table & Dump Data dari Table `sync_master` (toko)**
     - Create table `sync_master` jika belum exist
-    - [Query Create Table](query-create-sync_union-toko.md)
+    - [Query Create Table](query-create-sync_master-toko.md)
     - Ambil **Primary Key** dari tabel awal (masing-masing tabel master seperti `osls`, `sls1`, `pay1`, dll.) untuk dimasukkan ke dalam tabel `sync_master` sebagai penanda (mark) di database toko.
     - [Query Step 1](step1.md)
 
