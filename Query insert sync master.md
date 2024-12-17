@@ -9,10 +9,10 @@ Query ini mengambil data dari tabel `sync_master` berdasarkan kode toko yang dit
 ## Cara Penggunaan
 
 1. **Ganti Placeholder `[store_code]`**  
-   Gantilah `[store_code]` dengan kode toko yang ingin Anda ambil datanya. Misalnya, jika kode toko adalah `T001`, maka query Anda akan menjadi:
+   Gantilah `[store_code]` dengan kode toko yang ingin Anda ambil datanya. Misalnya, jika kode toko adalah `0001270`, maka query Anda akan menjadi:
    ```sql
    SELECT
-       'T001' AS store_code,
+       '0001270' AS store_code,
        key_value,
        table_name,
        key_name,
