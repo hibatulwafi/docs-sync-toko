@@ -3,7 +3,6 @@
 Berikut adalah serangkaian query untuk mendump data untuk di input ke cloud table masing-masing (database toko)
 `database_toko.osls` => `unionweb.osls`
 ...
-`database_toko.opoi` => `unionweb.opoi`
 
 ### Note : Jalankan query pada database toko
 ## **1. Tabel OSLS**
