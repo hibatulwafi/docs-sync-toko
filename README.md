@@ -22,7 +22,7 @@
 
 2. **[Dump unionweb] - Ambil Data asli `toko` untuk di input ke `cloud table` masing-masing**
     - Insert data ke `sync_master`
-    - [Query Insert sync_master](query-insert-sync_union-web.md)
+    - [Query Insert sync_master](query-insert-sync_master-web.md)
     - Insert data dari `database toko` kedalam masing masing table `osls` , `sls1` .... `opoi`.
     - [Query Step 2](step2.md)
       
