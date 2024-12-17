@@ -1,7 +1,5 @@
 # Query Create Table `sync_master`
-
 Dokumen ini berisi query SQL untuk membuat tabel `sync_master` pada database `toko`
----
 
 ## Catatan
 
