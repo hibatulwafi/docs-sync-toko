@@ -2,6 +2,9 @@
 
 Dokumen ini berisi query SQL untuk membuat tabel `sync_master` pada database `toko`
 
+### Note :
+#### Run pada database toko
+
 ## Query SQL untuk Membuat Tabel `sync_master`
 
 ```sql
