@@ -1,10 +1,6 @@
 # Dump Data dari Tabel `sync_master` untuk UNIONWEB
 
-Query ini digunakan untuk mengekspor data dari tabel `sync_master` yang relevan untuk digunakan pada sistem UNIONWEB.
-
-## Deskripsi
-
-Query ini mengambil data dari tabel `sync_master` berdasarkan kode toko yang ditentukan. Data yang diambil akan digunakan untuk sinkronisasi antara sistem client dan server. Data yang diekspor meliputi informasi tentang status sinkronisasi, tanggal sinkronisasi, dan metadata lainnya.
+Query ini digunakan untuk mengekspor data dari tabel `sync_master` database toko ke tabel `sync_master` pada sistem UNIONWEB.
 
 ## Cara Penggunaan
 
@@ -12,7 +8,7 @@ Query ini mengambil data dari tabel `sync_master` berdasarkan kode toko yang dit
    Gantilah `[store_code]` dengan kode toko yang ingin Anda ambil datanya. Misalnya, jika kode toko adalah `0001270`, maka query Anda akan menjadi:
    ```sql
    SELECT
-       '0001270' AS store_code,
+       '[store_code]' AS store_code,
        key_value,
        table_name,
        key_name,
