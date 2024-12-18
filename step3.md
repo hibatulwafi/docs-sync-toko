@@ -4,7 +4,7 @@ Berikut adalah serangkaian query untuk mendump data untuk di input ke cloud tabl
 `database_toko.osls` => `unionweb.osls`
 *note : sesuaikan dulu StoreCode nya.
 
-### Note : Jalankan query pada database toko
+### Note : Jalankan query pada database unionretaildb
 ## **1. Tabel OSLS**
 ```sql
 SELECT CONCAT('UPDATE sync_master SET is_sync_union = 1, ',
