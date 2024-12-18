@@ -2,7 +2,7 @@
 
 Berikut adalah serangkaian query untuk mendump data untuk di input ke cloud table masing-masing (database toko)
 `database_toko.osls` => `unionweb.osls`
-
+*note : sesuaikan dulu StoreCode nya.
 
 ### Note : Jalankan query pada database toko
 ## **1. Tabel OSLS**
@@ -15,6 +15,34 @@ SELECT CONCAT('UPDATE sync_master SET is_sync_union = 1, ',
 'AND store_code ="',o.StoreCode,'"',
 'AND table_name ="osls";') as query_update
 FROM osls o
-WHERE o.StoreCode = '0001270'
+WHERE o.StoreCode = '[store_code]'
+ORDER BY o.DocEntry ASC;
+```
+
+## **2. Tabel SLS1**
+```sql
+SELECT CONCAT('UPDATE sync_master SET is_sync_union = 1, ',
+'key_value_union ="',o.DocEntry,'", ',
+'key_name_union ="docentry",  ',
+'sync_date_union = CURRENT_TIMESTAMP() ',
+'WHERE key_value ="',o.BaseEntry,'"',
+'AND store_code ="',o.StoreCode,'"',
+'AND table_name ="sls1";') as query_update
+FROM osls o
+WHERE o.StoreCode = '[store_code]'
+ORDER BY o.DocEntry ASC;
+```
+
+## **2. Tabel Opay**
+```sql
+SELECT CONCAT('UPDATE sync_master SET is_sync_union = 1, ',
+'key_value_union ="',o.DocNum,'", ',
+'key_name_union ="docnum",  ',
+'sync_date_union = CURRENT_TIMESTAMP() ',
+'WHERE key_value ="',o.BaseEntry,'"',
+'AND store_code ="',o.StoreCode,'"',
+'AND table_name ="opay";') as query_update
+FROM osls o
+WHERE o.StoreCode = '[store_code]'
 ORDER BY o.DocEntry ASC;
 ```
