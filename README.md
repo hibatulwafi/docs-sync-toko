@@ -36,14 +36,14 @@
 
 ## Install Mini Sync Toko
 
-1.**Install Kebutuhan Software**
+1. **Install Kebutuhan Software**
 
-    - Node [Node.js v20.17.0](https://nodejs.org/en/download/prebuilt-installer).
-    - Composer [Composer v2.7.9]([https://nodejs.org/en/download/prebuilt-installer](https://getcomposer.org/download/).
-    - Git [Git](https://git-scm.com/downloads).
+    - Node [DownloadNode.js](https://nodejs.org/en/download/prebuilt-installer).
+    - Composer [Download Composer]([https://nodejs.org/en/download/prebuilt-installer](https://getcomposer.org/download/).
+    - Git [Download Git](https://git-scm.com/downloads).
 
 2.Clone repository
-``` https://github.com/rizaals/nfdashv2.git ```
+ ```https://github.com/rizaals/nfdashv2.git```
 
 5. **Install Scheduler**
     - TBD
