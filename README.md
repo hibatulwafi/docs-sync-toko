@@ -33,7 +33,17 @@
       
 4. **Cek data**
     - [Query Cek Data](query-cek-data.md)
-  
+
+## Install Mini Sync Toko
+
+1.**Install Kebutuhan Software**
+    - Node [![Node.js v20.17.0](https://nodejs.org/en/download/prebuilt-installer)]
+    - Composer [![Composer v2.7.9]([https://nodejs.org/en/download/prebuilt-installer](https://getcomposer.org/download/)]
+    - Git [![Git](https://git-scm.com/downloads)]
+
+2.Clone repository
+``` https://github.com/rizaals/nfdashv2.git ```
+
 5. **Install Scheduler**
     - TBD
 ---
