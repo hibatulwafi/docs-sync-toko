@@ -34,20 +34,88 @@
 4. **Cek data**
     - [Query Cek Data](query-cek-data.md)
 
-## Install Mini Sync Toko
+# **Panduan Instalasi NFDash V2**
 
-1. **Install Kebutuhan Software**
-
-    - Node [DownloadNode.js](https://nodejs.org/en/download/prebuilt-installer).
-    - Composer [Download Composer]([https://nodejs.org/en/download/prebuilt-installer](https://getcomposer.org/download/).
-    - Git [Download Git](https://git-scm.com/downloads).
-
-2.Clone repository
- ```https://github.com/rizaals/nfdashv2.git```
-
-5. **Install Scheduler**
-    - TBD
+## Requirement System (Pada Toko)
+- PHP 7.4.x
+- Node.js
+- Git
+- Composer
+- XAMPP
 ---
+
+### **1. Download & Install Kebutuhan Software**
+Pastikan Anda telah mengunduh dan menginstal perangkat lunak berikut sebelum memulai:  
+- **Node.js:** [Download Node.js](https://nodejs.org/en/download/prebuilt-installer).  
+- **Composer:** [Download Composer](https://getcomposer.org/download/).  
+- **Git:** [Download Git](https://git-scm.com/downloads).  
+
+---
+
+### **2. Clone Repository**
+Clone repository dari GitHub dan pindah ke branch yang sesuai:  
+```bash
+git clone https://github.com/rizaals/nfdashv2.git
+git checkout origin/minisync-toko
+```
+
+---
+
+### **3. Install Project**
+Ikuti langkah-langkah berikut untuk menginstal project:  
+
+1. Salin file `.env` contoh:  
+   ```bash
+   cp .env.example .env
+   ```  
+
+2. Generate application key:  
+   ```bash
+   php artisan key:generate
+   ```
+
+3. Install dependensi backend menggunakan Composer:  
+   ```bash
+   composer install
+   ```
+
+4. Install dependensi frontend menggunakan npm:  
+   ```bash
+   npm install
+   ```
+
+---
+
+### **4. Konfigurasi `.env`**
+Sesuaikan file `.env` Anda dengan kebutuhan, seperti contoh berikut:  
+
+- **STORE_CODE:** Sesuaikan dengan kode toko Anda:  
+  ```plaintext
+  STORE_CODE=[kode_toko]
+  ```
+
+- **Konfigurasi Database:**  
+  ```plaintext
+  DB_CONNECTION=mysql
+  DB_HOST=localhost
+  DB_PORT=3306
+  DB_DATABASE=vs_centralpark
+  DB_USERNAME=root
+  DB_PASSWORD=12345678
+  ```
+
+- **Alamat Sinkronisasi:**  
+  ```plaintext
+  ALAMAT_SYNC="https://dashv2.naturalfarm.id"
+  ```
+
+---
+
+### **5. Install Scheduler**
+Bagian ini akan ditentukan kemudian (TBD).
+
+---
+
 
 ## Catatan
 
