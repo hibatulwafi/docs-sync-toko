@@ -211,6 +211,8 @@ AND o.DocDate BETWEEN '[start_date]' AND '[end_date]'
 ORDER BY key_value ASC;
 ```
 
+---
+
 # Query untuk update data `is_sync_unionweb` `sync_date_unionweb` pada `sync_master`
 
 ```sql
