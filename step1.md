@@ -211,3 +211,11 @@ AND o.DocDate BETWEEN '[start_date]' AND '[end_date]'
 ORDER BY key_value ASC;
 ```
 
+# Query untuk update data `is_sync_unionweb` `sync_date_unionweb` pada `sync_master`
+
+```sql
+UPDATE sync_master
+SET is_sync_unionweb = 1,
+sync_date_unionweb = CURRENT_TIMESTAMP()
+WHERE `table_name` = 'osls';
+```
