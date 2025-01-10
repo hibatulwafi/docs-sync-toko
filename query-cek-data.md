@@ -76,3 +76,13 @@ SELECT * FROM pay4 p WHERE p.DocNum = '2401000003' AND p.StoreCode = '0000005';
 SELECT * FROM pay5 p WHERE p.DocNum = '2401000003' AND p.StoreCode = '0000005';
 SELECT * FROM opoi o WHERE o.BaseEntry = '9178' AND o.StoreCode = '0000005';
 ```
+
+
+## 2. Pengecekan last synchronize
+
+```sql
+SELECT sl.title, sm.store_code, MAX(sm.sync_date) AS sync_date, MAX(sm.sync_date_union) AS sync_date_union, sl.is_active, sl.
+FROM sync_master sm
+JOIN store_location sl ON sm.store_code = sl.store_code
+GROUP BY sm.store_code, sl.title;
+```
